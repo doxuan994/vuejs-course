@@ -80,6 +80,35 @@
         </div>
 
 
+
+
+        <div>
+            <button v-on:click="counter += 1">Click</button>
+
+            <p>You clicked the button {{counter}} times</p>
+        </div>
+
+
+
+
+        <div>
+            <button class="btn" v-on:click="greet('Hello world', $event)">Click</button>
+        </div>
+
+
+
+
+        <div>
+            <input type="text" v-on:keyup="keypress" v-on:keypress.enter="keySubmit">
+        </div>
+
+        <hr>
+        <h3>Form Submit</h3>
+        <form v-on:submit="formSubmit">
+            <input type="text" v-model="msg" placeholder="Enter something">
+            <input type="submit" value="Submit">
+        </form>
+
     </div>
 
 
