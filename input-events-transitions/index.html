@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Filters</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="app">
+
+        <div>
+            <input type="text" placeholder="Enter message" v-model="msg">
+
+            <p>{{msg}}</p>
+        </div>
+
+        <div>
+            <input type="checkbox" v-model="checked">
+
+            <p>{{checked}}</p>
+        </div>
+
+
+        <div>
+            <label>Mike</label>
+            <input type="checkbox" value="Mike" v-model="checkedNames">
+
+            <label>Steve</label>
+            <input type="checkbox" value="Steve" v-model="checkedNames">
+
+            <label>Jill</label>
+            <input type="checkbox" value="Jill" v-model="checkedNames">
+
+
+            <h2>Checked names</h2>
+            <ul v-for="name in checkedNames">
+                <li>{{name}}</li>
+            </ul>
+
+        </div>
+
+
+        <div>
+            <label>One</label>
+            <input type="radio" value="One" v-model="radioPicks">
+
+            <label>Two</label>
+            <input type="radio" value="Two" v-model="radioPicks">
+
+            <label>Three</label>
+            <input type="radio" value="Three" v-model="radioPicks">
+
+            <p>Radio picks: {{radioPicks}}</p>
+        </div>
+
+
+        <div>
+            <select v-model="selected">
+                <option>One</option>
+                <option>Two</option>
+                <option>Three</option>
+            </select>
+
+            <p>Selected: {{selected}}</p>
+        </div>
+
+
+        <div>
+            <select multiple v-model="selectedOpt">
+                <option v-for="option in options" v-bind:value="option.value">
+                    {{option.text}}
+                </option>
+            </select>
+
+            <p>Selected: {{selectedOpt}}</p>
+        </div>
+
+
+    </div>
+
+
+
+
+     <script src="js/app.js"></script>
+
+</body>
+</html>

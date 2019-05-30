@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vuejs Course</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="app">
+        <p v-once>{{msg}}</p>
+
+
+        <p>{{msg}}</p>
+        <p>{{age}}</p>
+        <p>{{user.name}}</p>
+
+        <span v-text="msg"></span>
+
+        <span v-html="htmlTxt"></span>
+
+
+        <a v-bind:href="url" target="_blank">Click</a>
+
+        <h2>{{age + 2}}</h2>
+
+        <h2>{{msg.length}}</h2>
+
+        <h2>{{foo ? 'YES' : 'NO'}}</h2>
+
+        <ul>
+            <li v-for="(user, index) in users">{{index}} - {{user.name}}: {{user.email}}</li>
+        </ul>
+
+
+        <p v-for="(value, key, index) in user">{{index}} - {{key}}: {{value}}</p>
+
+        <div v-for="n in 10">
+            {{n}}
+        </div>
+
+        <div v-if="status">
+            <p>Status is true</p>
+        </div>
+
+        <div v-else>
+            <p>Status is false</p>
+        </div>
+
+        <div v-if="active == 'active'">
+            <p>Active</p>
+        </div>
+
+        <div v-else-if="active == 'expired'">
+            <p>Expired</p>
+        </div>
+
+        <div v-else>
+            <p>Not Active</p>
+        </div>
+
+
+        <div v-bind:class="{active: isActive}">Hello World!</div>
+
+
+
+        <div v-bind:class="[activeClass]">Hello World!</div>
+        <div v-bind:class="[errorClass]">Hello World!</div>
+
+
+        <div v-bind:style="{color: baseStyles.activeColor, fontSize: baseStyles.fontSize+'px'}">Hello World!</div>
+
+        <div v-bind:style="[errorStyles]">Hello World!</div>
+
+
+
+
+
+    </div>
+
+
+
+
+     <script src="js/app.js"></script>
+
+</body>
+</html>
